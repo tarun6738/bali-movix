@@ -13,6 +13,8 @@ import ContentWrapper from "../../components/contentWrapper/ContentWrapper";
 import MovieCard from "../../components/movieCard/MovieCard";
 import Spinner from "../../components/spinner/Spinner";
 
+const TMDB_API_KEY = import.meta.env.VITE_APP_TMDB_API_KEY;
+
 let filters = {};
 
 const sortbyData = [
@@ -36,11 +38,11 @@ const Explore = () => {
     const [sortby, setSortby] = useState(null);
     const { mediaType } = useParams();
 
-    const { data: genresData } = useFetch(`/genre/${mediaType}/list`);
+    const { data: genresData } = useFetch(`/genre/${mediaType}/list?api_key=${TMDB_API_KEY}`);
 
     const fetchInitialData = () => {
         setLoading(true);
-        fetchDataFromApi(`/discover/${mediaType}`, filters).then((res) => {
+        fetchDataFromApi(`/discover/${mediaType}?api_key=${TMDB_API_KEY}`, filters).then((res) => {
             setData(res);
             setPageNum((prev) => prev + 1);
             setLoading(false);
@@ -49,7 +51,7 @@ const Explore = () => {
 
     const fetchNextPageData = () => {
         fetchDataFromApi(
-            `/discover/${mediaType}?page=${pageNum}`,
+            `/discover/${mediaType}?page=${pageNum}?api_key=${TMDB_API_KEY}`,
             filters
         ).then((res) => {
             if (data?.results) {

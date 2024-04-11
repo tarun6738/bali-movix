@@ -7,10 +7,12 @@ import SwitchTabs from "../../../components/switchTabs/SwitchTabs";
 
 import useFetch from "../../../hooks/useFetch";
 
+const TMDB_API_KEY = import.meta.env.VITE_APP_TMDB_API_KEY;
+
 const Popular = () => {
     const [endpoint, setEndpoint] = useState("movie");
 
-    const { data, loading } = useFetch(`/${endpoint}/popular`);
+    const { data, loading } = useFetch(`/${endpoint}/popular?api_key=${TMDB_API_KEY}`);
 
     const onTabChange = (tab) => {
         setEndpoint(tab === "Movies" ? "movie" : "tv");

@@ -14,6 +14,8 @@ import SearchResult from "./pages/searchResult/SearchResult";
 import Explore from "./pages/explore/Explore";
 import PageNotFound from "./pages/404/PageNotFound";
 
+const TMDB_API_KEY = import.meta.env.VITE_APP_TMDB_API_KEY;
+
 function App() {
     const dispatch = useDispatch();
     const { url } = useSelector((state) => state.home);
@@ -25,7 +27,7 @@ function App() {
     }, []);
 
     const fetchApiConfig = () => {
-        fetchDataFromApi("/configuration").then((res) => {
+        fetchDataFromApi(`/configuration?api_key=${TMDB_API_KEY}`).then((res) => {
             console.log(res);
 
             const url = {
@@ -44,7 +46,7 @@ function App() {
         let allGenres = {};
 
         endPoints.forEach((url) => {
-            promises.push(fetchDataFromApi(`/genre/${url}/list`));
+            promises.push(fetchDataFromApi(`/genre/${url}/list?api_key=${TMDB_API_KEY}`));
         });
 
         const data = await Promise.all(promises);

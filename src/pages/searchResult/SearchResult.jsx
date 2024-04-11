@@ -13,6 +13,8 @@ import MovieCard from "../../components/movieCard/MovieCard";
 import Spinner from "../../components/spinner/Spinner";
 import noResults from "../../assets/no-results.png";
 
+const TMDB_API_KEY = import.meta.env.VITE_APP_TMDB_API_KEY;
+
 const SearchResult = () => {
     const [data, setData] = useState(null);
     const [pageNum, setPageNum] = useState(1);
@@ -21,7 +23,7 @@ const SearchResult = () => {
 
     const fetchInitialData = () => {
         setLoading(true);
-        fetchDataFromApi(`/search/multi?query=${query}&page=${pageNum}`).then(
+        fetchDataFromApi(`/search/multi?query=${query}&page=${pageNum}?api_key=${TMDB_API_KEY}`).then(
             (res) => {
                 setData(res);
                 setPageNum((prev) => prev + 1);
@@ -31,7 +33,7 @@ const SearchResult = () => {
     };
 
     const fetchNextPageData = () => {
-        fetchDataFromApi(`/search/multi?query=${query}&page=${pageNum}`).then(
+        fetchDataFromApi(`/search/multi?query=${query}&page=${pageNum}?api_key=${TMDB_API_KEY}`).then(
             (res) => {
                 if (data?.results) {
                     setData({

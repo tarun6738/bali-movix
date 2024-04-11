@@ -10,11 +10,13 @@ import VideosSection from "./videosSection/VideosSection";
 import Similar from "./carousels/Similar";
 import Recommendation from "./carousels/Recommendation";
 
+const TMDB_API_KEY = import.meta.env.VITE_APP_TMDB_API_KEY;
+
 const Details = () => {
     const { mediaType, id } = useParams();
-    const { data, loading } = useFetch(`/${mediaType}/${id}/videos`);
+    const { data, loading } = useFetch(`/${mediaType}/${id}/videos?api_key=${TMDB_API_KEY}`);
     const { data: credits, loading: creditsLoading } = useFetch(
-        `/${mediaType}/${id}/credits`
+        `/${mediaType}/${id}/credits?api_key=${TMDB_API_KEY}`
     );
 
     return (
