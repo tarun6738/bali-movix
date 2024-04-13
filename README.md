@@ -61,11 +61,11 @@ Before getting started, make sure you have Node.js and npm installed on your mac
 
 ## Photos
 
-   ![Screenshot 2024-04-13 183251](https://github.com/tarun6738/bali-movix/assets/118709508/24aca0de-c494-452f-b97d-1dc07099b7a6)
-   ![Screenshot 2024-04-13 183315](https://github.com/tarun6738/bali-movix/assets/118709508/4a9239ff-c8ac-4da2-a188-0e6aac702de1)
    ![Screenshot 2024-04-13 183338](https://github.com/tarun6738/bali-movix/assets/118709508/fb6f1a3f-666e-4ed0-8761-c7186a7dd57c)
-   ![Screenshot 2024-04-13 183405](https://github.com/tarun6738/bali-movix/assets/118709508/3edb5ed9-04f3-481d-b4d4-61d66337c52c)
    ![Screenshot 2024-04-13 183427](https://github.com/tarun6738/bali-movix/assets/118709508/519361c9-45fe-43b6-bc5d-ee79a0ce7556)
+   ![Screenshot 2024-04-13 183315](https://github.com/tarun6738/bali-movix/assets/118709508/4a9239ff-c8ac-4da2-a188-0e6aac702de1)
+   ![Screenshot 2024-04-13 183251](https://github.com/tarun6738/bali-movix/assets/118709508/24aca0de-c494-452f-b97d-1dc07099b7a6)
+   ![Screenshot 2024-04-13 183405](https://github.com/tarun6738/bali-movix/assets/118709508/3edb5ed9-04f3-481d-b4d4-61d66337c52c)
 
    
 
