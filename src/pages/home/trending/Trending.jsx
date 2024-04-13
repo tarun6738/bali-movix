@@ -12,7 +12,7 @@ const TMDB_API_KEY = import.meta.env.VITE_APP_TMDB_API_KEY;
 const Trending = () => {
     const [endpoint, setEndpoint] = useState("day");
 
-    const { data, loading } = useFetch(`/trending/movie/${endpoint}?api_key=${TMDB_API_KEY}`);
+    const { data, loading } = useFetch(`/trending/movie/${endpoint}`);
 
     const onTabChange = (tab) => {
         setEndpoint(tab === "Day" ? "day" : "week");

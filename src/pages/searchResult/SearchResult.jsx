@@ -23,7 +23,7 @@ const SearchResult = () => {
 
     const fetchInitialData = () => {
         setLoading(true);
-        fetchDataFromApi(`/search/multi?query=${query}&page=${pageNum}?api_key=${TMDB_API_KEY}`).then(
+        fetchDataFromApi(`/search/multi?query=${query}&page=${pageNum}`).then(
             (res) => {
                 setData(res);
                 setPageNum((prev) => prev + 1);
@@ -33,7 +33,7 @@ const SearchResult = () => {
     };
 
     const fetchNextPageData = () => {
-        fetchDataFromApi(`/search/multi?query=${query}&page=${pageNum}?api_key=${TMDB_API_KEY}`).then(
+        fetchDataFromApi(`/search/multi?query=${query}&page=${pageNum}`).then(
             (res) => {
                 if (data?.results) {
                     setData({

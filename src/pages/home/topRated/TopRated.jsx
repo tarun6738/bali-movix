@@ -12,7 +12,7 @@ const TMDB_API_KEY = import.meta.env.VITE_APP_TMDB_API_KEY;
 const TopRated = () => {
     const [endpoint, setEndpoint] = useState("movie");
 
-    const { data, loading } = useFetch(`/${endpoint}/top_rated?api_key=${TMDB_API_KEY}`);
+    const { data, loading } = useFetch(`/${endpoint}/top_rated`);
 
     const onTabChange = (tab) => {
         setEndpoint(tab === "Movies" ? "movie" : "tv");
